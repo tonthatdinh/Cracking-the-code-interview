@@ -10,6 +10,8 @@ public class IsUnique {
             if (s1.charAt(i) != s1.charAt(1))
                 return false;
         }
+	for(int i = 0; i < s1.length(); i ++)
+		System.out.println("Hello world");
         return true;
     }
 
