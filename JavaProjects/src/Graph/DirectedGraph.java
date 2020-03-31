@@ -5,13 +5,12 @@ import java.util.Vector;
 public class DirectedGraph {
     private int V;
     private Vector<Integer> adj[];
+    private boolean[] visited;
 
-    private boolean[] marked;
-    private int[] edgeTo;
-    private int s;
 
     public DirectedGraph(int V){
         this.V = V;
+        adj = new Vector[this.V];
         for(int v = 0; v < V; v ++)
             adj[v] = new Vector<Integer>();
     }
@@ -38,7 +37,33 @@ public class DirectedGraph {
     }
 
 
-    private void DFS(int i) {
+    private void DFS(int u) {
+        visited[u] = true;
+        System.out.println(u);
+        for(int i = 0; i < adj[u].size(); i ++){
+            int v = adj[u].get(i);
+            if (!visited[v])
+                DFS(v);
+        }
+    }
+
+    public void printGraph(){
+        for(int i = 0; i < V; i ++){
+            System.out.print("Node " + i + " linked with ");
+            for(int j = 0; j < adj[i].size(); j ++){
+                int v = adj[i].get(j);
+                System.out.print(v + "," );
+            }
+            System.out.println();
+        }
+    }
+
+    public void DepthFirstSearch(int source){
+        visited = new boolean[this.V];
+        for(int i = 0; i < this.V; i ++)
+            visited[i] = false;
+        System.out.println("Starting Depth First Search in Directed Graph");
+        DFS(source);
     }
     public static void main(String args[]){
         System.out.println("This chapter is about Directed Graph");
@@ -46,8 +71,8 @@ public class DirectedGraph {
         directedGraph.addEdge(0, 1);
         directedGraph.addEdge(0, 2);
         directedGraph.addEdge(1,2);
-        directedGraph.addEdge(1, 3);
-        directedGraph.DFS(0);
+        directedGraph.printGraph();
+        directedGraph.DepthFirstSearch(0);
     }
 
 
