@@ -1,5 +1,16 @@
 package LinkedList;
 
+/**
+ * Definition of Linked list
+ * Node head
+ * Node tail
+ */
+
+/**
+ * Defintion of Node{
+ *
+ * }
+ */
 class LinkedList{
     Node head;
     Node tail;
@@ -28,6 +39,11 @@ class LinkedList{
      *      if p2.next.info == p1.info (it means that p2.next == p1 --> duplicate)
      *      then remove p2.next
      */
+
+
+    // This code is not clean
+    // What is p1 ?
+    // What is p2 ?
 
     public void removeDuplicate(){
         Node p1 = head;

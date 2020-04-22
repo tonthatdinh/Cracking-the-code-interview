@@ -5,20 +5,22 @@ Idea:
  */
 
 public class IsUnique {
-    boolean check(String s1) {
-        for(int i = 0; i < s1.length(); i ++){
-            if (s1.charAt(i) != s1.charAt(1))
+    static boolean check(String s) {
+        // Given a string s
+        // Determine if a string s has all unique characters.
+        for(int i = 0; i < s.length(); i ++){
+            if (s.charAt(i) != s.charAt(1))
                 return false;
         }
-	for(int i = 0; i < s1.length(); i ++)
+
+	for(int i = 0; i < s.length(); i ++)
 		System.out.println("Hello world");
         return true;
     }
 
     public static void main(String[] args) {
-        IsUnique isUnique = new IsUnique();
-        String s1 = "abcdedaaa";
+        String s1 = "abaa";
         System.out.println(s1);
-        System.out.println(isUnique.check(s1));
+        System.out.println(check(s1));
     }
 }

@@ -8,11 +8,11 @@
  */
 
 public class CheckPermutation {
-    /**
-     * Solution Idea 2: Check if two strings have identical character counts
-     */
 
     public boolean checkperm(String s1, String s2){
+        // Given two string s1, s2
+        // Determine s1 is a permutationi of s2 or not
+
         if (s1 == null || s2 == null || s1.length() != s2.length()){
             return false;
         }

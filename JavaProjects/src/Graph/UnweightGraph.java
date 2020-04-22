@@ -32,12 +32,14 @@ public class UnweightGraph {
     }
 
     private void DFS(int u) {
+        // marked that we have visited vertus u
         visited[u] = true;
         System.out.println(u);
+        // iterate all vertex that directed link with vertex u
         for(int i = 0; i < adj[u].size(); i ++){
             int v = adj[u].get(i);
-            if (!visited[v])
-                DFS(v);
+            if (!visited[v]) // check if whether vertex v has visited or not
+                DFS(v); // call DFS(v)
         }
     }
 
@@ -50,7 +52,7 @@ public class UnweightGraph {
     }
 
 
-    public static void main(String args[]){
+    public static void main(String[] args){
         System.out.println("HELLO World");
         UnweightGraph unweightGraph = new UnweightGraph(5);
         unweightGraph.addEdge(0, 1);

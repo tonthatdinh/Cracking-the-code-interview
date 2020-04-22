@@ -6,15 +6,12 @@ public class DirectedGraph {
     private int V;
     private Vector<Integer> adj[];
     private boolean[] visited;
-
-
     public DirectedGraph(int V){
         this.V = V;
         adj = new Vector[this.V];
         for(int v = 0; v < V; v ++)
             adj[v] = new Vector<Integer>();
     }
-
     public int getV() {
         return V;
     }
@@ -65,7 +62,7 @@ public class DirectedGraph {
         System.out.println("Starting Depth First Search in Directed Graph");
         DFS(source);
     }
-    public static void main(String args[]){
+    public static void main(String[] args){
         System.out.println("This chapter is about Directed Graph");
         DirectedGraph directedGraph = new DirectedGraph(5);
         directedGraph.addEdge(0, 1);
